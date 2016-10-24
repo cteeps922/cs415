@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Website.css">
+  </head>
+  <body>
+    <div class="Header">
+      <div class="Logo">
+        <img src="http://www.pilambdaphi.org/atf/cf/%7B9D4C0D8C-8A79-488E-A3DE-0DA60F108B1E%7D/crest.gif" />
+      </div>
+
+    </div>
+    <div class="SideBar">
+
+      <div class="SideBarTab">
+        <header class="TabName"> News </header>
+      </div>
+      <div class="SideBarTab">
+        <header class="TabName"> Philanthropy <header>
+      </div>
+      <div class="SideBarTab">
+        <header class="TabName"> History </header>
+      </div>
+      <div class="SideBarTab">
+        <header class="TabName"> Data Base </header>
+      </div>
+    </div>
+
+    <div class="ContentPage" id="NewsContent">
+      <p>Content</p>
+    </div>
+    <div class="ContentPage" id="PhilanthropyContent">
+      <p>Content</p>
+    </div>
+    <div class="ContentPage" id="HistoryContent">
+      <p>Content</p>
+    </div>
+    <div class="ContentPage" id="DataBaseContent">
+      <p> In this section each of the menu divs will be shown or hidden depending on which one is selected at that time. Pictures and content will be provided by a representative of Pi Lam. All data will be present on this one web page and the user does not have to go to any other page. Data will be stored directly in each div. The database of brothers will be behind a username and password lock handled by PHP. This database will hold biographical and professional information of every current and future member, pulled from LinkedIn's API. More input on style will be taken from President of Pi Lam as progres continues.  </p>
+      <div class="LogInContainer">
+	<form id ="logIn">
+	  <p class="username-password"> Username:
+	    <input type="text" name="Username"></p>
+	  <p class="username-password">  Password:
+	    <input type="text" name="Pasword"></p>
+	  <input class="button" type="submit" value="Submit">
+	</form>
+      </div>
+    </div>
+  </body>
+  <script src="homepageTabs.js"> </script>
+</html>
