@@ -12,7 +12,7 @@ for (i = 0; i < myTabs.length; i++) {
 	var database = document.getElementById("DataBaseContent");
 	var contentToChange = String(this.getAttribute("data-content"));
 	var contentToAddClass = document.getElementById(contentToChange);
-
+	
 	news.className = "isHidden";
 	phil.className = "isHidden";
 	history.className = "isHidden";
@@ -21,12 +21,19 @@ for (i = 0; i < myTabs.length; i++) {
 	contentToAddClass.className = "ContentPage";
     });
 }
-			      
-function validate(){
-    console.log("afdhgkjahgf");
-    if( (document.getElementbByName("Username").value === ValidUserame) &&
-	(document.getElementbByName("Password").value === ValidPassword)) {
-	document.getElementById("logIn").addClass("isHidden");
+
+var button = document.getElementById("button");
+
+var validate = function(){
+
+    if( (document.getElementById("Username").value === ValidUsername) &&
+	(document.getElementById("Password").value === ValidPassword)) {
+	var log_in = document.getElementById("LogInContainer");
+	log_in.className = "isHidden";
+	var admin = document.getElementById("DataBaseAdmin");
+	admin.className = "Contentpage";
+	document.getElementById("Username").value = "";
+	document.getElementById("Password").value = "";
     }else{
 	alert("Username or Password is invalid.");
     }
@@ -34,5 +41,4 @@ function validate(){
 //usernames and their corrosponding passwords. 
 	
 	
-
-	
+button.addEventListener("click", validate);

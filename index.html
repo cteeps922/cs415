@@ -49,18 +49,22 @@
     <div class="ContentPage" id="HistoryContent">
       <p>Vestibulum vitae sodales tellus. Ut a mattis odio, sit amet interdum erat. Sed non semper ex, non dignissim dolor. Donec ac nisl eros. Morbi eleifend elementum est.</p>
     </div>
-    <div class="ContentPage" id="DataBaseContent">
+    <div class="ContentPage" id="DataBaseContentLogIn">
       <p> In this section each of the menu divs will be shown or hidden depending on which one is selected at that time. Pictures and content will be provided by a representative of Pi Lam. All data will be present on this one web page and the user does not have to go to any other page. Data will be stored directly in each div. The database of brothers will be behind a username and password lock handled by PHP. This database will hold biographical and professional information of every current and future member, pulled from LinkedIn's API. More input on style will be taken from President of Pi Lam as progres continues.  </p>
-      <div class="LogInContainer">
-	<form id ="logIn">
+      <div id = "LogInContainer" class="LogInContainer">
+
 	  <p class="username-password"> Username:
-	    <input type="text" name="Username"></p>
+	    <input type="text" id="Username" name="Username"></p>
 	  <p class="username-password">  Password:
-	    <input type="text" name="Pasword"></p>
-	  <input class="button" type="submit" value="Submit">
-	</form>
+	    <input type="text" id="Password" name="Password"></p>
+	  <input id="button" class="button" type="submit" value="Submit">
+
+      </div>
+      <div class="isHidden" id="DataBaseAdmin">
+	<p> Admin will be able to edit the database on this div once they have sucesfully logged in</p>
       </div>
     </div>
+     
   </body>
   <script src="homepageTabs.js"> </script>
 </html>
