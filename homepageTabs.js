@@ -24,6 +24,15 @@ for (i = 0; i < myTabs.length; i++) {
 
 var button = document.getElementById("button");
 
+var cookieShow = function() {
+    if (
+	var log_in = document.getElementById("LogInContainer");
+	log_in.className = "isHidden";
+	var admin = document.getElementById("DataBaseAdmin");
+	admin.className = "Contentpage";
+	document.getElementById("Username").value = "";
+	document.getElementById("Password").value = "";
+	
 var validate = function(){
 
     if( (document.getElementById("Username").value === ValidUsername) &&

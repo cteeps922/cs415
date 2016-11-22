@@ -50,18 +50,61 @@
       <p>Vestibulum vitae sodales tellus. Ut a mattis odio, sit amet interdum erat. Sed non semper ex, non dignissim dolor. Donec ac nisl eros. Morbi eleifend elementum est.</p>
     </div>
 <!-- This script checks for a username cookie -->
-    <script src="cookieCheck.js"> </script>
     
     <div class="ContentPage" id="DataBaseContent">
       <p> In this section each of the menu divs will be shown or hidden depending on which one is selected at that time. Pictures and content will be provided by a representative of Pi Lam. All data will be present on this one web page and the user does not have to go to any other page. Data will be stored directly in each div. The database of brothers will be behind a username and password lock handled by PHP. This database will hold biographical and professional information of every current and future member, pulled from LinkedIn's API. More input on style will be taken from President of Pi Lam as progres continues.  </p>
+    <script src="checkCookie.js"> </script>
       <div class="LogInContainer">
 	<form id ="logIn" action="#" method="post">
-	    <input id="Username" type="text" name="username">
-	    <input id="Password" type="text" name="password">
+	    <input id="Username" type="text" name="username" placeholder = "username">
+	    <input id="Password" type="text" name="password" placeholder="password">
 	  <input class="button" type="submit" value="Submit">
 	</form>
       </div>
     </div>
+    <?php
+    
+    if(isset($_POST['username'])) {
+        $theusername = $_POST['username'];
+        $thepassword = $_POST['password'];
+        $foundUsername = FALSE;
+        $matchingPassword = FALSE;
+        $error = FALSE;
+        
+        //first look for the username in the database
+        $checkUsernameQuery = "SELECT password FROM websiteUsers WHERE username = '" . $theusername . "'";
+        $mysqli = new mysqli($host, $user, $password, $database);
+        $result = $mysqli->query($checkUsernameQuery);
+        echo $mysqli->connect_errno;
+        if ($result == FALSE) {
+            $error = TRUE;
+            echo "The username was not found";
+        }
+        //If we find the username, check if the password goes with it
+        else {
+            $assocpassword = $result->fetch_assoc()['password'];
+            echo $assocpassword;
+            $match = ($assocpassword == $thepassword);
+
+            //If the password is verified...
+            if ($match) {
+                //create the cookie with the successful login
+                //javascript for the cookie goes here
+                $cookieName = "user";
+                $cookieValue = $theusername;
+                setcookie($cookie_name, $cookieValue, time() + (86400), "/"); // the / means cookie is avalible within the entire domain and 86400 is seconds in a day
+            }
+          
+
+            //if the password does not match, echo error message
+            else {
+                $error = TRUE;
+                echo "The username did not match the password";
+            }
+        }   
+        
+    }
+     ?>
   </body>
   <script src="homepageTabs.js"> </script>
 </html>
