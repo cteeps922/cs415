@@ -53,7 +53,7 @@ html, body {
   height: 100%;
   width: 85%;
   z-index: 0;
-  padding: 10px;
+  padding: 20px;
 }
 .ContentPage P{
     padding: 15px;
@@ -79,4 +79,16 @@ html, body {
 
 .isHidden{
     visibility: hidden;
+}
+
+table, th, td{
+    margin: auto;
+    text-align: center;
+    font-size: 26px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
