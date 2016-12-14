@@ -38,7 +38,7 @@ html, body {
 }
 
 .TabName {
- 
+
    color: gold;
    font-size: 2.5vw;
    padding-top: 35px;
@@ -51,8 +51,9 @@ html, body {
   left: 15%;
   background-color: white;
   height: 100%;
-  width: 84%;
+  width: 85%;
   z-index: 0;
+  padding: 10px;
 }
 .ContentPage P{
     padding: 15px;
