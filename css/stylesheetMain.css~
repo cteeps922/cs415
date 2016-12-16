@@ -13,19 +13,13 @@ html, body {
 .Header h1{
     color:#4d004d;
     text-align:center;
-    font-size: 3.5vw
 }
 
 .Logo {
-    position: absolute;
-    height: 100%;
-    width: auto;
-    text-align: center;
-}
-
-.Logo img{
-    height: auto;
-    width: auto;
+  position: absolute;
+  height: 100%;
+  width: auto;
+  text-align: center;
 }
 
 .SideBar {
@@ -55,9 +49,8 @@ html, body {
 
 
 .ContentPage {
-  margin: 10px;
   position: absolute;
-  top: 22%;
+  top: 26%;
   left: 15%;
   background-color: white;
   height: 100%;
@@ -66,7 +59,7 @@ html, body {
   z-index: 0;
 }
 
-#founders{
+.ContentPage div{
     float: right;
     padding: 15px;
     display:inline;
@@ -77,7 +70,6 @@ html, body {
     display: inline-block;
     text-decoration: underline;
     color: #b58828;
-    font-size: 2.5vw;
 }
 
 .ContentPage P{
@@ -111,26 +103,11 @@ html, body {
 table, th, td{
     margin: auto;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 26px;
     border: 1px solid black;
     border-collapse: collapse;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-}
-
-#founders{
-    margin-right:50px;
-}
-
-#slideshow{
-    margin: auto;
-    width: 60%;
-    height: 400px;
-}
-
-#slideshow img{
-    height: 100%;
-    width: 100%;
 }
